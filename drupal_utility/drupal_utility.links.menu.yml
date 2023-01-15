@@ -1,0 +1,5 @@
+drupal_utility.date_time_config:
+  title: Admin Configuration
+  parent: system.admin_config_system
+  route_name: drupal_utility.date_time_config
+  weight: 10

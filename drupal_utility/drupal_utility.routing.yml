@@ -1,0 +1,7 @@
+drupal_utility.date_time_config:
+  path: '/admin/config/system/date-time-config'
+  defaults:
+    _title: 'Admin Configuration'
+    _form: 'Drupal\drupal_utility\Form\DateTimeConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
