@@ -1,0 +1,28 @@
+uuid: 20297c66-4165-4907-8232-ef6c429192fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - product_qr
+  theme:
+    - olivero
+id: apppurchaselinkqrblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: app_purchase_link_qr
+settings:
+  id: app_purchase_link_qr
+  label: 'App Purchase Link QR Block'
+  label_display: visible
+  provider: product_qr
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      product: product

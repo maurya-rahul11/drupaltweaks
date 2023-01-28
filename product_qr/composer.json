@@ -1,0 +1,8 @@
+{
+  "name": "rahul_maurya/product_qr",
+  "description": "Generates QR code of app purchase link.",
+  "type": "drupal-custom-module",
+  "require": {
+    "endroid/qr-code": "^4.3"
+  }
+}
