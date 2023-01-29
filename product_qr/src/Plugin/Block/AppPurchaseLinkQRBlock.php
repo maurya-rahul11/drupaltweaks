@@ -116,11 +116,11 @@ class AppPurchaseLinkQRBlock extends BlockBase implements ContainerFactoryPlugin
         ->validateResult(FALSE)
         ->build();
 
-      $qrCodeDirectory = $this->fileSystem->realpath('public://') . "/qr_code/";
+      $qrCodeDirectory = $this->fileSystem->realpath('public://') . "/";
       $fileName = $prodNid . "_app_purchase_link_qr_code.png";
       $qrPath = $qrCodeDirectory . $fileName;
       $endroidQR->saveToFile($qrPath);
-      $qrImgUrl = $baseUrl . "/sites/default/files/qr_code/" . $fileName;
+      $qrImgUrl = $baseUrl . "/sites/default/files/" . $fileName;
 
       $build = [
         'content' => [
@@ -130,6 +130,8 @@ class AppPurchaseLinkQRBlock extends BlockBase implements ContainerFactoryPlugin
           // Invalidate block cache when node changes.
           // Hence, setting block cache tags as node.
           'tags' => $node->getCacheTags(),
+          // Rebuild block for every new route.
+          'contexts' => ['route'],
         ],
       ];
     }

@@ -9,27 +9,35 @@ dependencies:
     - field.field.node.product.field_purchase_link
     - node.type.product
   module:
+    - image
     - text
     - user
+_core:
+  default_config_hash: 21x7jBdAe1lKtcULwMVthBVDMp-yCRLr_A_Ikgh1OnE
 id: node.product.teaser
 targetEntityType: node
 bundle: product
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 100
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
-  links:
-    settings: {  }
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
-  field_image: true
   field_purchase_link: true
-  langcode: true
+  links: true
